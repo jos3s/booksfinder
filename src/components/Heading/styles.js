@@ -26,9 +26,6 @@ const mediaFont = (theme) => css`
 `;
 
 export const Title = styled.h1`
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
   ${({ theme, size }) => css`
     ${titleSize[size](theme)}
   `}

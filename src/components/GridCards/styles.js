@@ -1,7 +1,5 @@
 import styled from 'styled-components';
 
-export const Container = styled.div``;
-
 export const Grid = styled.div`
   display: grid;
   grid-template-columns: 1fr;
@@ -10,7 +8,7 @@ export const Grid = styled.div`
   max-width: 180rem;
 
   @media (min-width: 768px) {
-    grid-template-columns: repeat(auto-fill, minmax(40rem, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(35rem, 1fr));
   }
 
   @media (min-width: 1800px) {

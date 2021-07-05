@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { Card } from '../Card/styles';
 
 export const Img = styled.img`
   height: 20rem;
@@ -19,7 +20,24 @@ export const Info = styled.div`
 
 export const Content = styled.div`
   height: 100%;
+  width: 100%;
   display: flex;
   flex-direction: column;
-  justify-content: space-evenly;
+  justify-content: flex-start;
+
+  @media (min-width: 500px) {
+    justify-content: space-evenly;
+  }
+`;
+
+export const Book = styled.div`
+  @media (min-width: 0px) and (max-width: 460px) {
+    ${Card} {
+      flex-direction: column;
+    }
+  }
+
+  ${Card} {
+    width: 100%;
+  }
 `;

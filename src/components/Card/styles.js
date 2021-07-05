@@ -5,7 +5,8 @@ export const Card = styled.div`
   flex-direction: ${({ column }) => (column ? 'column' : 'row')};
   gap: ${({ theme }) => theme.spacings.small};
   align-items: center;
-  width: auto;
+  width: 100%;
+  height: 100%;
   background: ${({ theme }) => theme.colors.cards.bg};
   border-radius: ${({ theme }) => theme.borders.md};
   color: ${({ theme }) => theme.colors.cards.textColor};

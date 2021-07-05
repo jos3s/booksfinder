@@ -9,25 +9,27 @@ import { Card } from '../Card';
 
 export const Book = ({ srcImg, title, authors, published, id }) => {
   return (
-    <Card>
-      <Styled.Img src={srcImg} />
-      <Styled.Content>
-        <Styled.Info>
-          <Heading size="small" as="h2">
-            {title}
-          </Heading>
-          <Heading size="xsmall" as="h3">
-            Author: {authors?.join(', ') || 'Unknown'}
-          </Heading>
-          <p>
-            Published: <time>{published || 'Unknown'}</time>
-          </p>
-        </Styled.Info>
-        <Link to={`books/${id}`}>
-          <Button>More info</Button>
-        </Link>
-      </Styled.Content>
-    </Card>
+    <Styled.Book>
+      <Card>
+        <Styled.Img src={srcImg} />
+        <Styled.Content>
+          <Styled.Info>
+            <Heading size="small" as="h2">
+              {title}
+            </Heading>
+            <Heading size="xsmall" as="h3">
+              Author: {authors?.join(', ') || 'Unknown'}
+            </Heading>
+            <p>
+              Published: <time>{published || 'Unknown'}</time>
+            </p>
+          </Styled.Info>
+          <Link to={`books/${id}`}>
+            <Button>More info</Button>
+          </Link>
+        </Styled.Content>
+      </Card>
+    </Styled.Book>
   );
 };
 
