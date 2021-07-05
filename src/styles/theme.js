@@ -1,20 +1,14 @@
-const gray = {
-  50: '#f5f5f5',
-  200: '#d8d8d8',
-  300: '#b8b8b8',
-  400: '#a8a8a8',
-  500: '#8d8d8d',
-  600: '#737373',
-  700: '#5d5d5d',
-  800: '#4d4d4d',
-  900: '#3b3b3b',
-};
+import { gray } from './colors';
+import { buttons, badges } from './variants';
 
 export const theme = {
+  buttons: { ...buttons },
+  badges: { ...badges },
   colors: {
     white: '#fff',
     textColor: '#000',
-    gray,
+    gray: { ...gray },
+    blueGray: '#455A64',
     background: '#F5F5F5',
     button: {
       bg: '#bdbdbd',

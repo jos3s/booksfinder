@@ -28,4 +28,8 @@ export const GlobalStyles = createGlobalStyle`
     margin:${({ theme }) => theme.spacings.medium} 0;
     padding:${({ theme }) => theme.spacings.medium} 0;
   }
+  a{
+    text-decoration:none;
+    color:inherit;
+  }
 `;
