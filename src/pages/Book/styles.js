@@ -19,7 +19,6 @@ export const Container = styled.div`
     justify-content: space-between;
 
     &.content {
-      width: 100%;
       padding: ${({ theme }) => theme.spacings.medium};
 
       align-items: flex-start;
@@ -40,7 +39,7 @@ export const Container = styled.div`
     }
   }
 
-  @media (min-width: 1000px) {
+  @media (min-width: 900px) {
     flex-direction: row;
     align-items: flex-start;
     ${Card} {
@@ -48,6 +47,7 @@ export const Container = styled.div`
         flex: 1;
         height: 50rem;
         max-width: 38rem;
+        width: auto;
         > img {
           height: 100%;
         }
@@ -66,6 +66,7 @@ export const Main = styled.div`
   gap: ${({ theme }) => theme.spacings.medium};
   justify-content: space-evenly;
   height: 100%;
+  width: 100%;
 `;
 
 export const Title = styled.div`
@@ -90,6 +91,7 @@ export const PublishedInfo = styled.section`
     margin-top: 0.8rem;
     display: flex;
     gap: ${({ theme }) => theme.spacings.xsmall};
+    align-items: center;
   }
 `;
 

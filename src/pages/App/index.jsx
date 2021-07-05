@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import * as Styled from './styles';
 
 import { Bounce } from 'react-rounder/Bounce';
@@ -45,7 +45,10 @@ function App() {
           <Bounce color="#607D8B" />
         </Styled.Container>
       ) : (
-        <GridCards cards={data} />
+        <Styled.Result>
+          {data.length > 0 && <small>{data.length} results</small>}
+          <GridCards cards={data} />
+        </Styled.Result>
       )}
 
       {data?.length === 0 && !loading && (

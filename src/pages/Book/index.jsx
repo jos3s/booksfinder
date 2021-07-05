@@ -2,6 +2,8 @@ import { useCallback, useEffect, useState } from 'react';
 import * as Styled from './styles';
 import { Link, useParams } from 'react-router-dom';
 
+import { Bounce } from 'react-rounder/Bounce';
+
 import { getBook } from '../../api';
 
 import { Header } from '../../components/Header';
@@ -13,16 +15,23 @@ import undraw_BlankCanvas from '../../assets/undraw_BlankCanvas.svg';
 
 export const Book = () => {
   const [book, setBook] = useState({});
+  const [loading, setLoading] = useState(false);
   const params = useParams();
 
   const loadData = useCallback(async () => {
+    setLoading(true);
     const data = await getBook(params.id);
     setBook(data);
+    setLoading(false);
   }, [params]);
 
   useEffect(() => {
     loadData();
   }, [loadData]);
+
+  useEffect(() => {
+    if (book.title) document.title = `${book.title} | Booksfinder`;
+  }, [book]);
 
   const {
     id,
@@ -37,12 +46,11 @@ export const Book = () => {
     averageRating,
   } = book;
 
-  console.log(!book);
   return (
     <Container>
       <Header />
 
-      {!book.title ? (
+      {!loading && !book.title && (
         <Styled.ContainerNotFound>
           <img src={undraw_BlankCanvas} />
           <p>Could not find this book.</p>
@@ -50,6 +58,12 @@ export const Book = () => {
             Go back to the <Link to="/"> home page.</Link>
           </p>
         </Styled.ContainerNotFound>
+      )}
+
+      {loading ? (
+        <Styled.Container>
+          <Bounce color="#607D8B" />
+        </Styled.Container>
       ) : (
         <Styled.Container>
           <Card className="image">
@@ -75,9 +89,7 @@ export const Book = () => {
               <Styled.PublishedInfo>
                 <small>Publisher and Published Date:</small>
                 <div>
-                  <Badge>
-                    <p>{publisher || 'Unknown'}</p>
-                  </Badge>
+                  <p>{publisher || 'Unknown'}</p>
                   <Badge variant="outline">
                     <time>{published || 'Unknown'}</time>
                   </Badge>

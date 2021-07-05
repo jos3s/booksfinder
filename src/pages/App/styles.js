@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { Grid as GridCards } from '../../components/GridCards/styles';
 
 export const Header = styled.div`
   display: flex;
@@ -45,5 +46,13 @@ export const Container = styled.div`
     > p {
       font-size: ${({ theme }) => theme.font.sizes.medium};
     }
+  }
+`;
+
+export const Result = styled.div`
+  margin-top: ${({ theme }) => theme.spacings.medium};
+
+  ${GridCards} {
+    margin-top: 0.5rem;
   }
 `;
