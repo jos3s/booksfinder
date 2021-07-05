@@ -9,7 +9,7 @@ export const api = axios.create({
 export const getSearch = async (query) => {
   const {
     data: { items },
-  } = await api.get('?q=' + query);
+  } = await api.get('?q=' + query + '&maxResults=20');
 
   const dataFormat = items?.map((item) => {
     return {
