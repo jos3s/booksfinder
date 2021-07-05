@@ -32,6 +32,7 @@ export const Container = styled.div`
     &.image {
       align-content: center;
       justify-content: center;
+      width: auto;
       > img {
         height: 40rem;
         border-radius: ${({ theme }) => theme.borders.sm};
