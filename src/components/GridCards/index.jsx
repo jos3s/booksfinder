@@ -1,5 +1,5 @@
 import P from 'prop-types';
-import { Card } from '../Card';
+import { Book } from '../Book';
 import * as Styled from './styles';
 
 export const GridCards = ({ cards = [] }) => {
@@ -7,7 +7,7 @@ export const GridCards = ({ cards = [] }) => {
     <Styled.Container>
       <Styled.Grid>
         {cards.map((card) => (
-          <Card
+          <Book
             key={card.id}
             id={card.id}
             srcImg={card.srcImg}
@@ -24,5 +24,5 @@ export const GridCards = ({ cards = [] }) => {
 };
 
 GridCards.propTypes = {
-  cards: P.arrayOf(P.shape(Card.propTypes)),
+  cards: P.arrayOf(P.shape(Book.propTypes)),
 };

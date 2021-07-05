@@ -1,15 +1,19 @@
 import P from 'prop-types';
+import * as Styled from './styles';
+import { Link as RRDLink } from 'react-router-dom';
+
 import { Heading } from '../Heading';
 import { Link } from '../Link';
-import * as Styled from './styles';
 
 export const Header = () => {
   return (
     <Styled.Container>
-      <Heading>Books finder</Heading>
+      <Heading>
+        <RRDLink to="/">Books finder</RRDLink>
+      </Heading>
       <Heading as="h2" size="xsmall">
-        by <Link href="https://github.com/jos3s">Jose Ulisses</Link> with{' '}
-        <Link href="https://developers.google.com/books/docs/overview">
+        by <Link link="https://github.com/jos3s">Jose Ulisses</Link> with{' '}
+        <Link link="https://developers.google.com/books/docs/overview">
           Google Books API.
         </Link>
       </Heading>

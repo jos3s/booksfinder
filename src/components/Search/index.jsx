@@ -1,6 +1,7 @@
 import P from 'prop-types';
-import { Container } from '../Container';
 import * as Styled from './styles';
+
+import { Button } from '../Button';
 
 export const Search = ({ onSubmit, inputValue, onChange }) => {
   return (
@@ -12,7 +13,9 @@ export const Search = ({ onSubmit, inputValue, onChange }) => {
         value={inputValue}
         onChange={onChange}
       />
-      <Styled.Button type="submit">Search</Styled.Button>
+      <Button variant="primary" type="submit">
+        Search
+      </Button>
     </Styled.Form>
   );
 };
