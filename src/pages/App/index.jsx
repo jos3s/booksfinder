@@ -12,6 +12,7 @@ import { Search } from '../../components/Search';
 import { Header } from '../../components/Header';
 import undraw_BookLover from '../../assets/undraw_BookLover.svg';
 import undraw_BlankCanvas from '../../assets/undraw_BlankCanvas.svg';
+import config from '../../config';
 
 function App() {
   const [data, setData] = useState([]);
@@ -32,6 +33,10 @@ function App() {
   const setQueryValues = (event) => {
     setQuery(event.target.value);
   };
+
+  useEffect(() => {
+    document.title = `${config.siteName} | Jos3s`;
+  }, []);
 
   return (
     <Container>
@@ -60,7 +65,7 @@ function App() {
 
       {data === undefined && (
         <Styled.Container>
-          <img src={undraw_BlankCanvas} />
+          <img src={undraw_BlankCanvas} alt="Blank Canvas" />
           <p>Your search returned no results...</p>
         </Styled.Container>
       )}
