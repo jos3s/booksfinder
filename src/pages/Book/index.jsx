@@ -12,17 +12,22 @@ import { Heading } from '../../components/Heading';
 import { Badge } from '../../components/Badge';
 import { Card } from '../../components/Card';
 import undraw_BlankCanvas from '../../assets/undraw_BlankCanvas.svg';
+import config from '../../config';
 
 export const Book = () => {
   const [book, setBook] = useState({});
-  const [loading, setLoading] = useState(false);
+  const [status, setStatus] = useState('');
   const params = useParams();
 
   const loadData = useCallback(async () => {
-    setLoading(true);
-    const data = await getBook(params.id);
-    setBook(data);
-    setLoading(false);
+    try {
+      setStatus('loading');
+      const data = await getBook(params.id);
+      setBook(data);
+      setStatus('success');
+    } catch (e) {
+      setStatus('error');
+    }
   }, [params]);
 
   useEffect(() => {
@@ -30,11 +35,10 @@ export const Book = () => {
   }, [loadData]);
 
   useEffect(() => {
-    if (book.title) document.title = `${book.title} | Booksfinder`;
+    if (book.title) document.title = `${book.title} | ${config.siteName} `;
   }, [book]);
 
   const {
-    id,
     title,
     authors,
     description,
@@ -50,7 +54,7 @@ export const Book = () => {
     <Container>
       <Header />
 
-      {!loading && !book.title && (
+      {!status && !book.title && (
         <Styled.ContainerNotFound>
           <img src={undraw_BlankCanvas} />
           <p>Could not find this book.</p>
@@ -60,11 +64,13 @@ export const Book = () => {
         </Styled.ContainerNotFound>
       )}
 
-      {loading ? (
+      {status === 'loading' && (
         <Styled.Container>
           <Bounce color="#607D8B" />
         </Styled.Container>
-      ) : (
+      )}
+
+      {status === 'success' && (
         <Styled.Container>
           <Card className="image">
             <img src={srcImg} alt={title} />
@@ -108,6 +114,15 @@ export const Book = () => {
             </Styled.Footer>
           </Card>
         </Styled.Container>
+      )}
+
+      {status === 'error' && (
+        <Styled.ContainerNotFound>
+          <img src={undraw_BlankCanvas} alt="Black Canvas" />
+          <Heading as="h2" size="big">
+            Could not find this book
+          </Heading>
+        </Styled.ContainerNotFound>
       )}
     </Container>
   );
