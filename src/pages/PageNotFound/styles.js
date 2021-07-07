@@ -11,7 +11,7 @@ export const Container = styled.div`
   text-align: center;
 
   > p {
-    font-size: ${({ theme }) => theme.font.sizes.small};
+    font-size: ${({ theme }) => theme.fontSizes.small};
   }
 
   > img {
@@ -26,7 +26,7 @@ export const Container = styled.div`
       height: 35rem;
     }
     > p {
-      font-size: ${({ theme }) => theme.font.sizes.medium};
+      font-size: ${({ theme }) => theme.fontSizes.medium};
     }
   }
 `;

@@ -4,7 +4,7 @@ import { Grid as GridCards } from '../../components/GridCards/styles';
 export const Header = styled.div`
   display: flex;
   flex-direction: column;
-  gap: ${({ theme }) => theme.spacings.small};
+  gap: ${({ theme }) => theme.space.small};
 
   @media (min-width: 1080px) {
     flex-direction: row;
@@ -29,7 +29,7 @@ export const Container = styled.div`
   text-align: center;
 
   > p {
-    font-size: ${({ theme }) => theme.font.sizes.small};
+    font-size: ${({ theme }) => theme.fontSizes.small};
   }
 
   > img {
@@ -44,13 +44,13 @@ export const Container = styled.div`
       height: 35rem;
     }
     > p {
-      font-size: ${({ theme }) => theme.font.sizes.medium};
+      font-size: ${({ theme }) => theme.fontSizes.medium};
     }
   }
 `;
 
 export const Result = styled.div`
-  margin-top: ${({ theme }) => theme.spacings.medium};
+  margin-top: ${({ theme }) => theme.space.medium};
 
   ${GridCards} {
     margin-top: 0.5rem;
