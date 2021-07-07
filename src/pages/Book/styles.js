@@ -42,6 +42,8 @@ export const Container = styled.div`
     align-items: flex-start;
     ${Card} {
       &.image {
+        position: sticky;
+        top: 1rem;
         flex: 1;
         height: 50rem;
         max-width: 38rem;
