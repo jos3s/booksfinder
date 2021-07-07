@@ -11,7 +11,7 @@ export const Book = ({ srcImg, title, authors, published, id }) => {
   return (
     <Styled.Book>
       <Card>
-        <Styled.Img src={srcImg} />
+        <Styled.Img src={srcImg} borderRadius="sm" />
         <Styled.Content>
           <Styled.Info>
             <Heading size="small" as="h2">

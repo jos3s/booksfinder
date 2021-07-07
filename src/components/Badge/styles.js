@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { variant } from 'styled-system';
+import { variant, typography } from 'styled-system';
 
 export const Container = styled.div`
   ${variant({
@@ -9,6 +9,8 @@ export const Container = styled.div`
       secondary: {},
     },
   })}
+
+  ${typography}
   display: inline-block;
   padding: 0.35em 0.6em;
   font-weight: 700;
@@ -17,7 +19,7 @@ export const Container = styled.div`
   white-space: nowrap;
   vertical-align: baseline;
   border-radius: 10rem;
-  font-size: ${({ theme }) => theme.font.sizes.small};
+
   outline: transparent solid 2px;
   outline-offset: 2px;
   margin: 0;

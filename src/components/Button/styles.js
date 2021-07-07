@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { variant } from 'styled-system';
+import { variant, space, typography, border } from 'styled-system';
 
 export const Button = styled.button`
   ${variant({
@@ -10,9 +10,10 @@ export const Button = styled.button`
     },
   })}
 
-  padding:${({ theme }) => theme.spacings.xsmall};
-  font-size: ${({ theme }) => theme.font.sizes.small};
-  border-radius: ${({ theme }) => theme.borders.sm};
+  ${space}
+  ${typography}
+  ${border}
+
   cursor: pointer;
   transition: all 0.3s ease-in-out;
 

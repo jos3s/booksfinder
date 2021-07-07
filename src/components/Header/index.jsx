@@ -12,8 +12,12 @@ export const Header = () => {
         <RRDLink to="/">Books finder</RRDLink>
       </Heading>
       <Heading as="h2" size="xsmall">
-        by <Link link="https://github.com/jos3s/booksfinder">Jose Ulisses</Link> with{' '}
-        <Link link="https://developers.google.com/books/docs/overview">
+        by{' '}
+        <Link link="https://github.com/jos3s/booksfinder" color="gray.4">
+          Jose Ulisses
+        </Link>{' '}
+        with{' '}
+        <Link link="https://developers.google.com/books/docs/overview" color="gray.4">
           Google Books API.
         </Link>
       </Heading>

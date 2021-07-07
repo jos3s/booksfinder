@@ -3,7 +3,13 @@ import * as Styled from './styles';
 
 export const Button = ({ children, variant = 'outline', ...rest }) => {
   return (
-    <Styled.Button variant={variant} {...rest}>
+    <Styled.Button
+      variant={variant}
+      p="xsmall"
+      fontSize="small"
+      borderRadius="sm"
+      {...rest}
+    >
       {children}
     </Styled.Button>
   );

@@ -5,13 +5,17 @@ import { Button } from '../Button';
 
 export const Search = ({ onSubmit, inputValue, onChange }) => {
   return (
-    <Styled.Form onSubmit={onSubmit}>
+    <Styled.Form onSubmit={onSubmit} gridGap="small">
       <Styled.Input
         type="text"
         name="query"
         placeholder="Search for books, authors..."
         value={inputValue}
         onChange={onChange}
+        bg="cardBg"
+        p="xsmall"
+        fontSize="small"
+        borderRadius="sm"
       />
       <Button variant="primary" type="submit">
         Search

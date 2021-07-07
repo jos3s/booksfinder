@@ -3,7 +3,7 @@ import * as Styled from './styles';
 
 export const Heading = ({ children, as = 'h1', size = 'huge', uppercase = false }) => {
   return (
-    <Styled.Title as={as} size={size} uppercase={uppercase}>
+    <Styled.Title as={as} size={size} uppercase={uppercase} color="text">
       {children}
     </Styled.Title>
   );

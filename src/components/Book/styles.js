@@ -1,19 +1,20 @@
 import styled from 'styled-components';
+import { border } from 'styled-system';
 import { Card } from '../Card/styles';
 
 export const Img = styled.img`
+  ${border}
   height: 20rem;
   width: 12.8rem;
-  border-radius: 0 ${({ theme }) => theme.borders.sm} ${({ theme }) => theme.borders.sm};
 `;
 
 export const Info = styled.div`
   > h3 {
-    margin: ${({ theme }) => theme.spacings.small} 0;
+    margin: ${({ theme }) => theme.space.small} 0;
   }
   > p {
-    font-size: ${({ theme }) => theme.font.sizes.small};
-    margin: ${({ theme }) => theme.spacings.xsmall} 0;
+    font-size: ${({ theme }) => theme.fontSizes.small};
+    margin: ${({ theme }) => theme.space.xsmall} 0;
     font-family: ${({ theme }) => theme.font.secondary};
   }
 `;
