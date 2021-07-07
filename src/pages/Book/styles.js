@@ -1,13 +1,15 @@
 import styled from 'styled-components';
+import { space, grid } from 'styled-system';
 import { Card } from '../../components/Card/styles';
 import { Container as Badge } from '../../components/Badge/styles';
 
 export const Container = styled.div`
-  margin-top: ${({ theme }) => theme.spacings.medium};
+  ${space}
+  ${grid}
+
   display: flex;
   flex-direction: column;
   width: 100%;
-  gap: ${({ theme }) => theme.spacings.small};
   align-items: center;
   justify-content: space-around;
 
@@ -17,13 +19,8 @@ export const Container = styled.div`
 
   ${Card} {
     justify-content: space-between;
-
     &.content {
-      padding: ${({ theme }) => theme.spacings.medium};
-
       align-items: flex-start;
-      gap: ${({ theme }) => theme.spacings.large};
-
       > p {
         margin: 0;
       }
@@ -35,7 +32,7 @@ export const Container = styled.div`
       width: auto;
       > img {
         height: 40rem;
-        border-radius: ${({ theme }) => theme.borders.sm};
+        border-radius: ${({ theme }) => theme.radii.sm};
       }
     }
   }
@@ -64,8 +61,8 @@ export const Container = styled.div`
 export const Main = styled.div`
   display: flex;
   flex-direction: column;
-  gap: ${({ theme }) => theme.spacings.medium};
-  justify-content: space-evenly;
+  ${grid}
+  justify-content: flex-start;
   height: 100%;
   width: 100%;
 `;
@@ -73,7 +70,7 @@ export const Main = styled.div`
 export const Title = styled.div`
   display: flex;
   flex-direction: column;
-  gap: ${({ theme }) => theme.spacings.xsmall};
+  ${grid}
 
   > ${Badge} {
     width: 8rem;
@@ -91,7 +88,7 @@ export const PublishedInfo = styled.section`
   > div {
     margin-top: 0.8rem;
     display: flex;
-    gap: ${({ theme }) => theme.spacings.xsmall};
+    gap: ${({ theme }) => theme.space.xsmall};
     align-items: center;
   }
 `;
@@ -115,13 +112,13 @@ export const ContainerNotFound = styled.div`
   align-items: center;
   justify-content: center;
   width: 100%;
-  margin: 4rem 0;
+  ${space}
   text-align: center;
 
   > p {
     margin: 0;
     margin-bottom: 0.8rem;
-    font-size: ${({ theme }) => theme.font.sizes.small};
+    font-size: ${({ theme }) => theme.fontSizes.small};
   }
 
   > img {
@@ -136,7 +133,7 @@ export const ContainerNotFound = styled.div`
       height: 35rem;
     }
     > p {
-      font-size: ${({ theme }) => theme.font.sizes.medium};
+      font-size: ${({ theme }) => theme.fontSizes.medium};
     }
   }
 `;

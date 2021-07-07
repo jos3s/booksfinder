@@ -65,19 +65,20 @@ export const Book = () => {
       )}
 
       {status === 'loading' && (
-        <Styled.Container>
+        <Styled.Container mt="medium" gridGap="small">
           <Bounce color="#607D8B" />
         </Styled.Container>
       )}
 
       {status === 'success' && (
-        <Styled.Container>
+        <Styled.Container mt="medium" gridGap="small">
           <Card className="image">
             <img src={srcImg} alt={title} />
           </Card>
-          <Card column className="content">
-            <Styled.Main>
-              <Styled.Title>
+
+          <Card column className="content" p="medium" gridGap="large">
+            <Styled.Main gridGap="medium">
+              <Styled.Title gridGap="small">
                 <Heading as="h2" size="big">
                   {title || 'No title'}
                 </Heading>
@@ -117,7 +118,7 @@ export const Book = () => {
       )}
 
       {status === 'error' && (
-        <Styled.ContainerNotFound>
+        <Styled.ContainerNotFound my="4rem">
           <img src={undraw_BlankCanvas} alt="Black Canvas" />
           <Heading as="h2" size="big">
             Could not find this book
