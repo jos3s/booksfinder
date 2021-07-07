@@ -14,23 +14,24 @@ export const GlobalStyles = createGlobalStyle`
     font-size:1.6rem;
     background-color:${({ theme }) => theme.colors.background};
     font-family: ${({ theme }) => theme.font.primary};
+    color:${({ theme }) => theme.colors.text};
   }
   h1,h2,h3,h4,h5,h6{
     font-family: ${({ theme }) => theme.font.primary};
-    margin:${({ theme }) => theme.spacings.large} 0;
+    margin:${({ theme }) => theme.space.large} 0;
     font-weight:700;
     margin:0;
   }
   p{
-    margin:${({ theme }) => theme.spacings.medium} 0;
+    margin:${({ theme }) => theme.space.medium} 0;
   }
   ul,ol{
-    margin:${({ theme }) => theme.spacings.medium} 0;
-    padding:${({ theme }) => theme.spacings.medium} 0;
+    margin:${({ theme }) => theme.space.medium} 0;
+    padding:${({ theme }) => theme.space.medium} 0;
   }
   a{
     text-decoration:none;
-    color:inherit;
+    color: ${({ theme }) => theme.colors.primary};
   }
   small{
     font-weight:700;

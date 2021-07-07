@@ -1,52 +1,32 @@
-import { gray } from './colors';
-import { buttons, badges } from './variants';
+import { light, dark } from './system/colors';
+import { space } from './system/space';
+import { radii } from './system/radii';
+import { fontSizes } from './system/fontSizes';
+import { buttons, badges } from './system/variants';
 
-export const theme = {
-  buttons: { ...buttons },
-  badges: { ...badges },
-  colors: {
-    white: '#fff',
-    textColor: '#000',
-    gray: { ...gray },
-    blueGray: '#455A64',
-    background: '#F5F5F5',
-    button: {
-      bg: '#bdbdbd',
-    },
-    cards: {
-      bg: '#fff',
-      textColor: '#000',
-    },
-  },
+const themeBases = {
+  buttons,
+  badges,
   font: {
     primary: "'Comfortaa', cursive",
     secondary: "'Montserrat', sans-serif",
-    sizes: {
-      xsmall: '.8rem',
-      small: '1.6rem',
-      medium: '2.4rem',
-      large: '3.2rem',
-      xlarge: '4.0rem',
-      xxlarge: '4.8rem',
-      huge: '5.6rem',
-      xhuge: '6.4rem',
-    },
   },
   media: {
     lteMedium: '(max-width: 768px)',
   },
-  spacings: {
-    xsmall: '.8rem',
-    small: '1.6rem',
-    medium: '2.4rem',
-    large: '3.2rem',
-    xlarge: '4.0rem',
-    xxlarge: '4.8rem',
-    huge: '5.6rem',
-    xhuge: '6.4rem',
-  },
-  borders: {
-    sm: '0.4rem',
-    md: '0.8rem',
-  },
+  radii,
+  space,
+  fontSizes,
+};
+
+export const themeLight = {
+  title: 'LightTheme',
+  colors: { ...light },
+  ...themeBases,
+};
+
+export const themeDark = {
+  title: 'DarkTheme',
+  colors: { ...dark },
+  ...themeBases,
 };
