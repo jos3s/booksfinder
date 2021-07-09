@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { variant, space, typography, border } from 'styled-system';
+import { variant, space, typography, border, layout, compose } from 'styled-system';
 
 export const Button = styled.button`
   ${variant({
@@ -10,9 +10,7 @@ export const Button = styled.button`
     },
   })}
 
-  ${space}
-  ${typography}
-  ${border}
+  ${compose(space, typography, border, layout)}
 
   cursor: pointer;
   transition: all 0.3s ease-in-out;
