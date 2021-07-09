@@ -11,6 +11,8 @@ import { Container } from '../../components/Container';
 import { Heading } from '../../components/Heading';
 import { Badge } from '../../components/Badge';
 import { Card } from '../../components/Card';
+import { Text } from '../../components/Text';
+import { Image } from '../../components/Image';
 import undraw_BlankCanvas from '../../assets/undraw_BlankCanvas.svg';
 import config from '../../config';
 
@@ -53,39 +55,83 @@ export const Book = () => {
   return (
     <Container>
       <Header />
-
       {!status && !book.title && (
-        <Styled.ContainerNotFound>
-          <img src={undraw_BlankCanvas} />
-          <p>Could not find this book.</p>
-          <p>
+        <Styled.Container
+          mt="medium"
+          my="4rem"
+          alignItems="center"
+          justifyContent="center"
+          flexDirection="column"
+        >
+          <Image src={undraw_BlankCanvas} alt="Blank Canvas" width="100%" height="100%" />
+          <Text fontSize="large" textAlign="center">
+            Could not find this book.
+          </Text>
+          <Text fontSize="medium">
             Go back to the <Link to="/"> home page.</Link>
-          </p>
-        </Styled.ContainerNotFound>
+          </Text>
+        </Styled.Container>
       )}
 
       {status === 'loading' && (
-        <Styled.Container mt="medium" gridGap="small">
+        <Styled.Container
+          mt="huge"
+          mx="auto"
+          gridGap="small"
+          alignItems="center"
+          justifyContent="center"
+        >
           <Bounce color="#607D8B" />
         </Styled.Container>
       )}
 
       {status === 'success' && (
-        <Styled.Container mt="medium" gridGap="small">
-          <Card className="image">
-            <img src={srcImg} alt={title} />
+        <Styled.Container
+          mt="medium"
+          gridGap="small"
+          flexDirection={['column', null, null, 'row']}
+          justifyContent="space-around"
+          alignItems={['center', null, null, 'flex-start']}
+        >
+          <Card
+            className="image"
+            height={['100%', null, null, '500px']}
+            maxWidth={['300px', null, null, '360px']}
+            width="100%"
+            justifyContent="center"
+            alignItems="center"
+          >
+            <Image
+              src={srcImg}
+              alt={title}
+              height={['400px', null, null, '100%']}
+              borderRadius="sm"
+            />
           </Card>
 
-          <Card column className="content" p="medium" gridGap="large">
-            <Styled.Main gridGap="medium">
-              <Styled.Title gridGap="small">
+          <Card
+            className="content"
+            p="medium"
+            gridGap="large"
+            flexDirection="column"
+            justifyContent="space-between"
+            alignItems="flex-start"
+          >
+            <Styled.Main
+              gridGap="medium"
+              flexDirection="column"
+              justifyContent="flex-start"
+            >
+              <Styled.Title gridGap="small" flexDirection="column">
                 <Heading as="h2" size="big">
                   {title || 'No title'}
                 </Heading>
                 <Heading as="h3" size="small">
                   {authors?.join(', ') || 'Unknown'}
                 </Heading>
-                <Badge title="Language">{language}</Badge>
+                <Badge title="Language" width="8rem">
+                  {language}
+                </Badge>
               </Styled.Title>
 
               <Styled.Description>
@@ -96,7 +142,7 @@ export const Book = () => {
               <Styled.PublishedInfo>
                 <small>Publisher and Published Date:</small>
                 <div>
-                  <p>{publisher || 'Unknown'}</p>
+                  <Text>{publisher || 'Unknown'}</Text>
                   <Badge variant="outline">
                     <time>{published || 'Unknown'}</time>
                   </Badge>
@@ -105,25 +151,34 @@ export const Book = () => {
 
               <Styled.Rating>
                 <small>Average Rating:</small>
-                <p>{averageRating || 'No rating found'}</p>
+                <Text mt="0.8rem">{averageRating || 'No rating found'}</Text>
               </Styled.Rating>
             </Styled.Main>
 
             <Styled.Footer>
               <small>Categories:</small>
-              <p>{categories?.join(', ') || 'Unknown'}</p>
+              <Text mt="0.8rem">{categories?.join(', ') || 'Unknown'}</Text>
             </Styled.Footer>
           </Card>
         </Styled.Container>
       )}
 
       {status === 'error' && (
-        <Styled.ContainerNotFound my="4rem">
-          <img src={undraw_BlankCanvas} alt="Black Canvas" />
-          <Heading as="h2" size="big">
+        <Styled.Container
+          mt="medium"
+          my="4rem"
+          alignItems="center"
+          justifyContent="center"
+          flexDirection="column"
+        >
+          <img src={undraw_BlankCanvas} alt="Black Canvas" width="100%" height="100%" />
+          <Text textAlign="center" fontSize="large">
             Could not find this book
-          </Heading>
-        </Styled.ContainerNotFound>
+          </Text>
+          <Text fontSize="medium">
+            Go back to the <Link to="/"> home page.</Link>
+          </Text>
+        </Styled.Container>
       )}
     </Container>
   );
