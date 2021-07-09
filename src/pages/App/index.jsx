@@ -10,6 +10,8 @@ import { GridCards } from '../../components/GridCards';
 import { Heading } from '../../components/Heading';
 import { Search } from '../../components/Search';
 import { Header } from '../../components/Header';
+import { Text } from '../../components/Text';
+import { Image } from '../../components/Image';
 import undraw_BookLover from '../../assets/undraw_BookLover.svg';
 import undraw_BlankCanvas from '../../assets/undraw_BlankCanvas.svg';
 import config from '../../config';
@@ -40,13 +42,26 @@ function App() {
 
   return (
     <Container>
-      <Styled.Header>
+      <Styled.Container
+        gridGap="small"
+        flexDirection={['column', null, null, 'row']}
+        alignItems={['flex-start', null, null, 'center']}
+        justifyContent={['space-between']}
+        my="xlarge"
+        mx="0"
+      >
         <Header />
         <Search onSubmit={search} inputValue={query} onChange={setQueryValues} />
-      </Styled.Header>
+      </Styled.Container>
 
       {loading ? (
-        <Styled.Container>
+        <Styled.Container
+          flexDirection="column"
+          alignItems="center"
+          justifyContent="center"
+          my="xlarge"
+          mx="0"
+        >
           <Bounce color="#607D8B" />
         </Styled.Container>
       ) : (
@@ -57,16 +72,46 @@ function App() {
       )}
 
       {data?.length === 0 && !loading && (
-        <Styled.Container>
-          <img src={undraw_BookLover} />
-          <p>You haven&apos;t done any research yet.</p>
+        <Styled.Container
+          flexDirection="column"
+          alignItems="center"
+          justifyContent="center"
+          my="xlarge"
+          mx="0"
+        >
+          <Image
+            src={undraw_BookLover}
+            alt="Blank Canvas"
+            width="100%"
+            maxWidth="35rem"
+            height="100%"
+            maxHeight="35rem"
+            my="medium"
+          />
+          <Text fontSize="medium" textAlign="center">
+            You haven&apos;t done any research yet.
+          </Text>
         </Styled.Container>
       )}
 
       {data === undefined && (
-        <Styled.Container>
-          <img src={undraw_BlankCanvas} alt="Blank Canvas" />
-          <p>Your search returned no results...</p>
+        <Styled.Container
+          flexDirection="column"
+          alignItems="center"
+          justifyContent="center"
+        >
+          <Image
+            src={undraw_BookLover}
+            alt="Blank Canvas"
+            width="100%"
+            maxWidth="35rem"
+            height="100%"
+            maxHeight="35rem"
+            my="medium"
+          />
+          <Text fontSize="medium" textAlign="center">
+            Your search returned no results...
+          </Text>
         </Styled.Container>
       )}
     </Container>
