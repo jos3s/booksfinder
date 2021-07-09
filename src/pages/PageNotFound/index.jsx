@@ -4,8 +4,10 @@ import * as Styled from './styles';
 
 import { Container } from '../../components/Container';
 import { Header } from '../../components/Header';
-import { Heading } from '../../components/Heading';
+import { Text } from '../../components/Text';
+
 import undraw_PageNotFound from '../../assets/undraw_PageNotFound.svg';
+import { Image } from '../../components/Image';
 
 function PageNotFound() {
   const history = useHistory();
@@ -21,10 +23,16 @@ function PageNotFound() {
       <Header />
 
       <Styled.Container>
-        <img src={undraw_PageNotFound} alt="Page not found" />
-        <Heading as="h2" size="small">
+        <Image
+          src={undraw_PageNotFound}
+          alt="Page not found"
+          width="100%"
+          height="100%"
+          my="huge"
+        />
+        <Text fontSize="medium" textAlign="center">
           Page not found. Redirecting you for home.
-        </Heading>
+        </Text>
       </Styled.Container>
     </Container>
   );
