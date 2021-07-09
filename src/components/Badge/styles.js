@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { variant, typography } from 'styled-system';
+import { variant, typography, layout, compose } from 'styled-system';
 
 export const Container = styled.div`
   ${variant({
@@ -10,7 +10,6 @@ export const Container = styled.div`
     },
   })}
 
-  ${typography}
   display: inline-block;
   padding: 0.35em 0.6em;
   font-weight: 700;
@@ -23,4 +22,5 @@ export const Container = styled.div`
   outline: transparent solid 2px;
   outline-offset: 2px;
   margin: 0;
+  ${compose(typography, layout)}
 `;
