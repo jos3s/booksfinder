@@ -1,5 +1,5 @@
 import styled, { css } from 'styled-components';
-import { color } from 'styled-system';
+import { color, typography, compose, space } from 'styled-system';
 
 const titleSize = {
   xsmall: (theme) => css`
@@ -32,5 +32,5 @@ export const Title = styled.h1`
   `}
   text-transform:${({ uppercase }) => (uppercase ? 'uppercase' : 'none')};
 
-  ${color}
+  ${compose(typography, color, space)}
 `;
