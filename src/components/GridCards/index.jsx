@@ -2,9 +2,15 @@ import P from 'prop-types';
 import { Book } from '../Book';
 import * as Styled from './styles';
 
-export const GridCards = ({ cards = [] }) => {
+export const GridCards = ({ cards = [], ...props }) => {
   return (
-    <Styled.Grid>
+    <Styled.Grid
+      my="small"
+      mx=" 0"
+      gridGap="2rem"
+      gridTemplateColumns={['1fr', null, null, 'repeat(auto-fill, minmax(35rem, 1fr))']}
+      {...props}
+    >
       {cards.map((card) => (
         <Book
           key={card.id}
@@ -12,9 +18,7 @@ export const GridCards = ({ cards = [] }) => {
           srcImg={card.srcImg}
           title={card.title}
           authors={card.authors}
-          publisher={card.publisher}
           published={card.published}
-          language={card.language}
         />
       ))}
     </Styled.Grid>

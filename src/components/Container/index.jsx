@@ -1,8 +1,16 @@
 import P from 'prop-types';
 import * as Styled from './styles';
 
-export const Container = ({ children }) => {
-  return <Styled.Container>{children}</Styled.Container>;
+export const Container = ({ children, ...props }) => {
+  return (
+    <Styled.Container
+      my="2rem"
+      mx={['2rem', null, '3rem', null, null, 'auto']}
+      {...props}
+    >
+      {children}
+    </Styled.Container>
+  );
 };
 
 Container.propTypes = {
