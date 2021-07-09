@@ -5,7 +5,7 @@ import { Button } from '../Button';
 
 export const Search = ({ onSubmit, inputValue, onChange }) => {
   return (
-    <Styled.Form onSubmit={onSubmit} gridGap="small">
+    <Styled.Form onSubmit={onSubmit} gridGap="small" flexDirection={['column', 'row']}>
       <Styled.Input
         type="text"
         name="query"
@@ -13,11 +13,10 @@ export const Search = ({ onSubmit, inputValue, onChange }) => {
         value={inputValue}
         onChange={onChange}
         bg="cardBg"
-        p="xsmall"
+        color="text"
         fontSize="small"
-        borderRadius="sm"
       />
-      <Button variant="primary" type="submit">
+      <Button variant="primary" type="submit" width={['100%', '350px']}>
         Search
       </Button>
     </Styled.Form>

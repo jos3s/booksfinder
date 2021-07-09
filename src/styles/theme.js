@@ -14,6 +14,7 @@ const themeBases = {
   media: {
     lteMedium: '(max-width: 768px)',
   },
+  breakpoints: ['500px', '700px', '900px', '1080px', '1800px'],
   radii,
   space,
   fontSizes,

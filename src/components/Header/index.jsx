@@ -15,7 +15,8 @@ export const Header = () => {
     <Styled.Container>
       <Heading>
         <RRDLink to="/">Books finder</RRDLink>
-        <Button onClick={toggleTheme} border="none" title="Switch Theme" p="small">
+
+        <Button onClick={toggleTheme} border="none" title="Switch Theme" p="xsmall">
           {themeTitle === 'LightTheme' ? <BsSun size="1.5em" /> : <BsMoon size="1.5em" />}
         </Button>
       </Heading>

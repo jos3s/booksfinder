@@ -15,7 +15,7 @@ export const Link = ({ link = '#', newTab = true, children, ...props }) => {
 };
 
 Link.propTypes = {
-  link: P.string,
+  link: P.string.isRequired,
   newTab: P.bool,
   children: P.any,
 };

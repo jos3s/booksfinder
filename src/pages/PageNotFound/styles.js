@@ -8,25 +8,4 @@ export const Container = styled.div`
   justify-content: center;
   width: 100%;
   margin: 4rem 0;
-  text-align: center;
-
-  > p {
-    font-size: ${({ theme }) => theme.fontSizes.small};
-  }
-
-  > img {
-    margin-top: 3rem;
-    width: 100%;
-    height: 100%;
-  }
-
-  @media (min-width: 500px) {
-    > img {
-      width: 35rem;
-      height: 35rem;
-    }
-    > p {
-      font-size: ${({ theme }) => theme.fontSizes.medium};
-    }
-  }
 `;

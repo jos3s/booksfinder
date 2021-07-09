@@ -16,7 +16,7 @@ export const getSearch = async (query) => {
       id: item.id,
       title: item.volumeInfo.title,
       authors: item.volumeInfo.authors,
-      published: item.volumeInfo.publishedDate,
+      published: item.volumeInfo.publishedDate || 'Unknown',
       srcImg: item.volumeInfo.imageLinks?.thumbnail || imageBackup,
     };
   });
